@@ -1,0 +1,45 @@
+[tool.poetry]
+name = "products platform"
+version = "0.1.0"
+description = ""
+authors = ["Rafael Mattos <rafael.mattos@fluencyacademy.io>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.100.0"
+sqlalchemy = "^2.0.19"
+alembic = "^1.11.1"
+uvicorn = "^0.23.0"
+pydantic = "^2.0.3"
+aws-lambda-powertools = "^2.21.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+polyfactory = "^2.2.0"
+faker = "^18.9.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+black = "^23.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 79
+exclude = '''
+/(
+    # The following are specific to Black, you probably don't want those.
+    | migration/versions/*
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 79
+skip_glob = "^(src|tests)"
+
+[tool.pycln]
+exclude="migration/versions/*"
+all=true
