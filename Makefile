@@ -21,3 +21,14 @@ migrations:
 
 models-revision:
 	poetry run alembic revision --autogenerate -m "$(MESSAGE)"
+
+# Docker compose
+compose-down:
+	docker-compose down
+
+compose-stop:
+	docker-compose stop $(SERVICE)
+
+## local database container
+compose-database:
+	docker-compose up -d postgres
