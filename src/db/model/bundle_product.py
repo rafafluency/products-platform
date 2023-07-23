@@ -1,7 +1,7 @@
 from sqlalchemy import JSON, Column, ForeignKey, Integer, String
 from sqlalchemy.orm import relationship
 
-from db.model.base import BaseEntity
+from src.db.model.base import BaseEntity
 
 
 class BundleProduct(BaseEntity):

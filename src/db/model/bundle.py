@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String
 
-from db.model.base import BaseEntity
+from src.db.model.base import BaseEntity
 
 
 class Bundle(BaseEntity):
