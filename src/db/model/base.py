@@ -1,7 +1,7 @@
 from datetime import datetime
-from uuid import UUID, uuid4
+from uuid import UUID
 
-from sqlalchemy import DateTime, Uuid, func
+from sqlalchemy import DateTime, func
 from sqlalchemy.orm import DeclarativeBase, Mapped, class_mapper, mapped_column
 
 
@@ -11,12 +11,6 @@ class BaseEntity(DeclarativeBase):
     table classes using this class as a base class.
     """
 
-    id: Mapped[UUID] = mapped_column(
-        Uuid(as_uuid=True),
-        primary_key=True,
-        unique=True,
-        default=uuid4,
-    )
     created_at: Mapped[DateTime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now(),
