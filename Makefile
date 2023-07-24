@@ -7,7 +7,7 @@ clean:
 	rm -rf .pytest_cache
 
 test: clean
-	poetry run pytest
+	poetry run pytest tests
 	$(MAKE) clean
 
 lint:
